@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { menuItem } from "../assets/constants";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-slate-950/20 backdrop-blur-sm">
@@ -20,8 +23,50 @@ const Navbar = () => {
             </div>
 
             {/* -----menu--- */}
+
+            <div className="hidden md:flex items-center gap-x-6 lg:gap-x-8">
+              {menuItem.map((item, key) => (
+                <a
+                  key={key}
+                  className="text-gray-300 hover:text-white text-sm lg:text-base"
+                  href={item.itemLink}
+                >
+                  {item.itemName}
+                </a>
+              ))}
+            </div>
+
+            {/* -----hamburger button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 text-gray-300 hover:text-white"
+            >
+              {isOpen ? (
+                <X className="w-5 sm:w-5 h-6 sm:h-6" />
+              ) : (
+                <Menu className="w-5 sm:w-5 h-6 sm:h-6" />
+              )}
+            </button>
           </div>
         </div>
+
+        {/* ------res nav menu---- */}
+        {isOpen && (
+          <div className="md:hidden bg-slate-950/95 backdrop-blur-lg border-t border-slate-800 slide-in-from-top animate-in duration-300">
+            <div className="px-4 py-4 sm:py-6 gap-y-6 sm:gap-y-8 flex flex-col items-center">
+              {menuItem.map((item, key) => (
+                <a
+                  key={key}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-300 hover:text-white text-sm lg:text-base"
+                  href={item.itemLink}
+                >
+                  {item.itemName}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );
