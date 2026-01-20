@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { dotColors, fileTabs } from "../assets/constants";
+import {
+  codeExamples,
+  dotColors,
+  fileTabs,
+  floatingCards,
+} from "../assets/constants";
 import { ChevronDown } from "lucide-react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Banner = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -15,6 +22,8 @@ const Banner = () => {
 
     return () => window.removeEventListener("mousemove", handleMousemove);
   }, []);
+
+  const currentFloatingCard = floatingCards[activeTab];
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 sm:px-6 lg:px-8 overflow-hidden">
@@ -67,8 +76,47 @@ const Banner = () => {
                   ))}
                 </div>
 
-
                 {/* ----code content */}
+                <div className="relative overflow-hidden flex-grow">
+                  <SyntaxHighlighter
+                    language="javascript"
+                    style={nightOwl}
+                    customStyle={{
+                      margin: 0,
+                      borderRadius: "8px",
+                      fontSize: "11px",
+                      lineHeight: "1.4",
+                      height: "100%",
+                      border: "1px solid #3c3c3c",
+                    }}
+                  >
+                    {codeExamples[activeTab]}
+                  </SyntaxHighlighter>
+                </div>
+              </div>
+            </div>
+
+            {/* ---------floating cards */}
+            <div
+              className={`hidden lg:block absolute bottom-4 right-4 transform translate-x-8 translate-y-8 w-72 ${currentFloatingCard.bgColor} backdrop-blur-xl rounded-lg p-4 border border-white/20 shadow-2xl`}
+            >
+              <div className="flex items-center gap-x-2 mb-2">
+                <div
+                  className={`w-6 h-6 ${currentFloatingCard.iconColor} flex items-center justify-center text-sm font-bold`}
+                >
+                  {currentFloatingCard.icon}
+                </div>
+                <span
+                  className={`text-sm font-medium${currentFloatingCard.textColor}`}
+                >
+                  {currentFloatingCard.title}
+                </span>
+              </div>
+
+              <div
+                className={`text-sm text-left ${currentFloatingCard.contentColor}`}
+              >
+                {currentFloatingCard.content}
               </div>
             </div>
           </div>
