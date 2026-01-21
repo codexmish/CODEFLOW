@@ -5,7 +5,7 @@ import {
   fileTabs,
   floatingCards,
 } from "../assets/constants";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Sparkles } from "lucide-react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -40,6 +40,28 @@ const Banner = () => {
         {/* ------bottom right bg color animation */}
         <div className="absolute bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
+
+        <div className="max-w-7xl mx-auto text-center relative w-full">
+          <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center relative">
+           {/* -------left content */}
+            <div>
+              <div className="inline-flex items-center gap-x-2 px-3 sm:px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700">
+
+              <Sparkles className="w-4 h-4 text-blue-400"/>
+              <span className="text-xs sm:text-sm text-blue-300">Introducing Codeflow AI</span>
+              </div>
+
+              <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700 delay-100">
+                <span>Code Faster</span>
+                <span>Build Better</span>
+                <span>With CodeFlow AI</span>
+              </h1>
+
+
+
+            </div>
+
+         {/* ------right content */}
         <div className="relative order-2 w-full">
           <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/10">
             <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[280px] sm:w-[350px] lg:h-[450px] border-white/5">
@@ -121,6 +143,22 @@ const Banner = () => {
             </div>
           </div>
         </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </section>
     </>
   );
