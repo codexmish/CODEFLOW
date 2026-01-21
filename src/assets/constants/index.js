@@ -1,7 +1,7 @@
 const menuItem = [
   {
     itemName: "Features",
-    itemLink: "#Features",
+    itemLink: "#features",
   },
   {
     itemName: "Pricing",
@@ -194,4 +194,11 @@ const result = await processData(input)
   },
 ];
 
-export { menuItem, dotColors, codeExamples, fileTabs, floatingCards, featuresData };
+export {
+  menuItem,
+  dotColors,
+  codeExamples,
+  fileTabs,
+  floatingCards,
+  featuresData,
+};
