@@ -40,7 +40,7 @@ const Banner = () => {
         {/* ------bottom right bg color animation */}
         <div className="absolute bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        <div className="max-w-7xl px-4 md:px-0 mx-4 md:mx-auto text-center relative w-full">
+        <div className="max-w-7xl mx-4 md:mx-auto text-center relative w-full">
           <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 text-center lg:text-left gap-6 sm:gap-8 lg:gap-12 items-center relative">
             {/* -------left content */}
             <div>
