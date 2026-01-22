@@ -1,6 +1,6 @@
 import React from "react";
 import { plans } from "../assets/constants";
-import { Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 
 const Pricing = () => {
   return (
@@ -40,6 +40,44 @@ const Pricing = () => {
                     </div>
                   </div>
                 )}
+                <div className="text-center mb-6 sm:mb-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                    {item.name}
+                  </h3>
+                  <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
+                    {item.description}
+                  </p>
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-b from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                      ${item.price}
+                    </span>
+                    <span className="text-gray-400 ml-1 sm:ml-2 text-sm sm:text-base">
+                      /month
+                    </span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-row">
+                  {item.features.map((feitem, fekey) => (
+                    <li
+                      key={fekey}
+                      className="flex items-start gap-x-2 sm:gap-x-3"
+                    >
+                      <div className="flex-shrink-0 w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5">
+                        <Check className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-blue-400" />
+                      </div>
+                      <span className="text-gray-300 text-sm sm:text-base">
+                        {feitem}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold sm:text-base transition-all duration-300 hover:bg-white/10 flex items-center justify-center gap-x-2 ${item.mostPopular ? "bg-gradient-to-b from-blue-500 to-cyan-500" : "bg-white/5 hover:bg-white/10 border border-white/10 "}`}
+                >
+                  Get Started
+                </button>
               </div>
             ))}
           </div>
