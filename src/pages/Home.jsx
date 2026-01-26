@@ -13,7 +13,6 @@ const Home = () => {
         <Features/>
         <Pricing/>
         <Testimo/>
-        <Footer/>
       </div>
     </>
   );
