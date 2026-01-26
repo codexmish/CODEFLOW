@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Features from "../components/Features";
 import Pricing from "../components/Pricing";
 import Testimo from "../components/Testimo";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Features/>
         <Pricing/>
         <Testimo/>
+        <Footer/>
       </div>
     </>
   );
