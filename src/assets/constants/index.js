@@ -272,6 +272,19 @@ const testimonials = [
   },
 ];
 
+const footerLinks = {
+  Product: ["Features", "Pricing", "Security", "Roadmap", "Changelog"],
+  Company: ["About", "Blog", "Careers", "Press", "Partners"],
+  Resources: [
+    "Documentation",
+    "Help Center",
+    "Community",
+    "API Reference",
+    "Status",
+  ],
+  Legal: ["Privacy", "Terms", "Cookie Policy", "Licenses", "Compliance"],
+};
+
 export {
   menuItem,
   dotColors,
@@ -281,4 +294,5 @@ export {
   featuresData,
   plans,
   testimonials,
+  footerLinks,
 };
